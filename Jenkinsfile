@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build_with_maven') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn install'
             }
             post{
                 success{
