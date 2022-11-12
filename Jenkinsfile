@@ -13,8 +13,15 @@ pipeline {
         }
         stage('Build_with_maven') {
             steps {
-                sh 'mvn install'
+                sh 'mvn clean package'
             }
+            post{
+                success{
+                    echo Ärchiving the Artifacts
+                    
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+            } 
         }
         stage ('deploy_to_container') {
             steps {
