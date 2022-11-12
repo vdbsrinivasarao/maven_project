@@ -17,7 +17,7 @@ pipeline {
             }
             post{
                 success{
-                    echo Ärchiving the Artifacts
+                    echo "Archiving the Artifacts"
                     
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
@@ -25,7 +25,7 @@ pipeline {
         }
         stage ('deploy_to_container') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.218.134.45:8080')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://http://13.230.190.224:8082/')], contextPath: null, war: '**/*.war'
             }
         }
     }
