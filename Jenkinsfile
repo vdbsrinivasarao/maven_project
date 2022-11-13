@@ -1,8 +1,8 @@
 pipeline {
     agent any
     
-    tools {
-        maven "mvn"
+    environment {
+        PATH = "/opt/apache-maven-3.8.6/bin/bash: $PATH"
     }
 
     stages {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build_with_maven') {
             steps {
-                sh 'mvn install'
+                sh 'mvn clean install'
             }
             post{
                 success{
