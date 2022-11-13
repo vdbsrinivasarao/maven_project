@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git_clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/iamkishore0/maven_project.git'
+                git branch: 'main', url: 'https://github.com/vdbsrinivasarao/maven_project.git'
             }
         }
         stage('Build_with_maven') {
