@@ -23,10 +23,10 @@ pipeline {
                 }
             } 
         }
-        stage ('deploy_to_container') {
-            steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://http://13.230.190.224:8082/')], contextPath: null, war: '**/*.war'
-            }
-        }
+        #stage ('deploy_to_container') {
+         #   steps {
+          #      deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://http://13.230.190.224:8082/')], contextPath: null, war: '**/*.war'
+           # }
+        #}
     }
 }
