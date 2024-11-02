@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    tools {
-        maven "Maven3"
-    }
-    
+       
     stages {
         stage('Git_clone') {
             steps {
@@ -12,7 +9,7 @@ pipeline {
         }
         stage('Build_with_maven') {
             steps {
-                sh "mvn install"
+                sh "mvn clean package"
               }
          
            }
